@@ -1,5 +1,21 @@
 
-      
+<nav style="position: fixed; z-index: 99; height: 100px;" >
+  
+  <div class="nav-wrapper" style="background:#F2F013; ">
+    <img class="brand-logo right"  src="https://seeklogo.com/images/F/flag-map-of-guatemala-logo-108E5C3714-seeklogo.com.png" alt="" style="height: 100%; width: 5%;">                                          
+    <div class="brand-logo center">
+      <a [routerLink]="['/']">
+      <span style="margin-right: 10px !important;"  >Pelis Chapin</span>
+    </a>
+    </div>
+    
+    <ul id="nav-mobile" >
+      <li *ngIf="!loggedButtons"><a  style="height: 100px; padding: 15px; font-size: large;" [routerLink]="['/login']" routerLinkActive="router-link-active" >Iniciar Sesión </a> </li>      
+      <li *ngIf="loggedButtons"><a  style="height: 100px; padding: 15px; font-size: large;" (click)="logOut()" routerLinkActive="router-link-active" > <mat-icon style="margin-top:18px; font-size: 35px;">exit_to_app</mat-icon></a></li>      
+      <li *ngIf="loggedButtons && isAdmin"><a  style="height: 100px; padding: 15px; font-size: large;" [routerLink]="['/category']" routerLinkActive="router-link-active" > Categorias</a></li>
+    </ul>
+  </div>
+</nav>
 
 
 <router-outlet></router-outlet>
